@@ -4,195 +4,612 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tiny Pea | Thời trang nữ</title>
-<meta name="description" content="Tiny Pea - Thời trang nữ trẻ trung, năng động và dễ ứng dụng.">
+
+<meta name="description" content="Tiny Pea - Thời trang nữ trẻ trung, năng động và dễ ứng dụng. Your Style, Your Story.">
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:#59434d;background:#fff8fa}
-a{text-decoration:none;color:inherit}
-.topbar{text-align:center;background:#f8dde8;padding:10px;font-size:12px;letter-spacing:1px;color:#765565}
-header{height:85px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fff}
-.logo img{width:115px;height:65px;object-fit:contain}
-nav{display:flex;gap:27px;font-size:13px}
-nav a:hover{color:#c47d9a}
-.hero{min-height:570px;display:flex;align-items:center;padding:65px 9%;background:linear-gradient(90deg,rgba(60,35,45,.52),rgba(60,35,45,.08)),url('images/set-ao-babydoll-va-chan-vay-jean.jpg') center/cover;color:white}
-.hero-content{max-width:550px}
-.hero small{letter-spacing:3px}
-h1{font-family:'Playfair Display',serif;font-size:clamp(45px,6vw,72px);line-height:1.15;margin:20px 0}
-.hero p{line-height:1.9;margin-bottom:28px}
-.btn{display:inline-block;background:#edc5d6;color:#59434d;padding:14px 27px;border-radius:30px;font-size:13px;font-weight:600;transition:.3s}
-.btn:hover{background:#dba5bd}
-section{padding:75px 8%}
-.heading{text-align:center;margin-bottom:40px}
-.heading small{color:#c47d9a;letter-spacing:2px}
-h2{font-family:'Playfair Display',serif;font-size:36px;margin-top:12px}
-.intro{max-width:750px;margin:auto;text-align:center;line-height:1.9;color:#806e76}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.product{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px #d9b8c522;transition:.3s}
-.product:hover{transform:translateY(-5px)}
-.product img{width:100%;height:350px;object-fit:cover;display:block}
-.product-info{padding:18px;text-align:center}
-.product-info h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500}
-.product-info p{font-size:12px;color:#a17b8b;margin-top:8px}
-.about{background:#fae9ef}
-.about-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px}
-.about-inner img{width:100%;height:430px;object-fit:cover;border-radius:16px}
-.about-inner p{line-height:1.9;color:#806e76;margin:20px 0}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.value{background:#fff0f5;padding:28px 18px;border-radius:15px;text-align:center}
-.value h3{font-family:'Playfair Display',serif;margin-bottom:12px}
-.value p{font-size:13px;line-height:1.8;color:#806e76}
-.contact{background:#f8dde8;text-align:center}
-.contact p{margin:17px 0 25px;color:#765565}
-footer{background:#59434d;color:white;padding:45px 8% 20px}
-.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-footer p{font-size:13px;line-height:2;color:#f5dde7}
-footer h3{font-size:14px;margin-bottom:12px}
-.copyright{border-top:1px solid #806b75;margin-top:30px;padding-top:18px;font-size:12px}
-@media(max-width:700px){
-header{height:auto;padding:15px;flex-direction:column;gap:12px}
-nav{gap:13px;flex-wrap:wrap;justify-content:center;font-size:11px}
-.hero{min-height:500px;padding:45px 7%}
-section{padding:55px 6%}
-.products,.values,.about-inner{grid-template-columns:1fr}
-.product img{height:390px}
-.about-inner img{height:350px}
-h2{font-size:30px}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #59434d;
+    background: #fff8fa;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topbar {
+    text-align: center;
+    background: #f8dde8;
+    padding: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #765565;
+}
+
+/* HEADER */
+header {
+    min-height: 85px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.logo img {
+    width: 115px;
+    height: 65px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    gap: 27px;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #c47d9a;
+}
+
+/* HERO */
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 65px 9%;
+    background:
+    linear-gradient(90deg, rgba(60,35,45,.52), rgba(60,35,45,.08)),
+    url('images/set-ao-babydoll-va-chan-vay-jean.jpg') center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero small {
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 6vw, 72px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero p {
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    background: #edc5d6;
+    color: #59434d;
+    padding: 14px 27px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #dba5bd;
+    transform: translateY(-2px);
+}
+
+/* SECTION */
+section {
+    padding: 75px 8%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading small {
+    color: #c47d9a;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-top: 12px;
+}
+
+.intro {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.9;
+    color: #806e76;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #d9b8c522;
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 18px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.product-info p {
+    font-size: 12px;
+    color: #a17b8b;
+    margin-top: 8px;
+}
+
+/* ABOUT */
+.about {
+    background: #fae9ef;
+}
+
+.about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.about-inner img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.about-inner p {
+    line-height: 1.9;
+    color: #806e76;
+    margin: 20px 0;
+}
+
+/* VALUES */
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.value {
+    background: #fff0f5;
+    padding: 28px 18px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.value h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
+}
+
+.value p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #806e76;
+}
+
+/* CONTACT */
+.contact {
+    background: #f8dde8;
+    text-align: center;
+}
+
+.contact p {
+    margin: 17px 0 25px;
+    color: #765565;
+}
+
+/* FOOTER */
+footer {
+    background: #59434d;
+    color: white;
+    padding: 45px 8% 20px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    font-size: 13px;
+    line-height: 2;
+    color: #f5dde7;
+}
+
+footer h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+footer a {
+    transition: .3s;
+}
+
+footer a:hover {
+    color: #f3b9d0;
+    text-decoration: underline;
+}
+
+.social-link {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.copyright {
+    border-top: 1px solid #806b75;
+    margin-top: 30px;
+    padding-top: 18px;
+    font-size: 12px;
+    color: #f5dde7;
+}
+
+/* MOBILE */
+@media(max-width: 700px) {
+    header {
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 45px 7%;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .products,
+    .values,
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 390px;
+    }
+
+    .about-inner img {
+        height: 350px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 25px;
+    }
 }
 </style>
 </head>
 
 <body>
-<div class="topbar">CHÀO MỪNG BẠN ĐẾN VỚI TINY PEA ♡</div>
 
+<!-- TOPBAR -->
+<div class="topbar">
+    CHÀO MỪNG BẠN ĐẾN VỚI TINY PEA ♡
+</div>
+
+<!-- HEADER -->
 <header>
-<a class="logo" href="#trang-chu">
-<img src="images/logo-tinypea.jpg" alt="Logo Tiny Pea">
-</a>
-<nav>
-<a href="#trang-chu">Trang chủ</a>
-<a href="#san-pham">Sản phẩm</a>
-<a href="#gioi-thieu">Giới thiệu</a>
-<a href="#lien-he">Liên hệ</a>
-</nav>
+    <a class="logo" href="#trang-chu">
+        <img src="images/logo-tinypea.jpg" alt="Logo Tiny Pea">
+    </a>
+
+    <nav>
+        <a href="#trang-chu">Trang chủ</a>
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#lien-he">Liên hệ</a>
+    </nav>
 </header>
 
 <main>
+
+<!-- HERO -->
 <section class="hero" id="trang-chu">
-<div class="hero-content">
-<small>THỜI TRANG DÀNH CHO NÀNG</small>
-<h1>Mặc đẹp mỗi ngày,<br>tự tin là chính mình.</h1>
-<p>Tiny Pea mang đến những thiết kế trẻ trung, năng động và dễ ứng dụng, giúp nàng tự tin tỏa sáng theo phong cách riêng.</p>
-<a href="#san-pham" class="btn">KHÁM PHÁ SẢN PHẨM</a>
-</div>
+    <div class="hero-content">
+        <small>THỜI TRANG DÀNH CHO NÀNG</small>
+
+        <h1>
+            Mặc đẹp mỗi ngày,<br>
+            tự tin là chính mình.
+        </h1>
+
+        <p>
+            Tiny Pea mang đến những thiết kế trẻ trung,
+            năng động và dễ ứng dụng, giúp nàng tự tin
+            tỏa sáng theo phong cách riêng.
+        </p>
+
+        <a href="#san-pham" class="btn">
+            KHÁM PHÁ SẢN PHẨM
+        </a>
+    </div>
 </section>
 
+<!-- INTRODUCTION -->
 <section>
-<div class="heading">
-<small>CHÀO NÀNG ĐẾN VỚI TINY PEA</small>
-<h2>Một chút xinh, thật nhiều tự tin</h2>
-</div>
-<p class="intro">Tiny Pea tin rằng mỗi cô gái đều có vẻ đẹp và cá tính riêng. Chúng mình lựa chọn những thiết kế thời trang trẻ trung, dễ phối và thoải mái để đồng hành cùng nàng trong từng khoảnh khắc thường ngày.</p>
+    <div class="heading">
+        <small>CHÀO NÀNG ĐẾN VỚI TINY PEA</small>
+        <h2>Một chút xinh, thật nhiều tự tin</h2>
+    </div>
+
+    <p class="intro">
+        Tiny Pea tin rằng mỗi cô gái đều có vẻ đẹp và cá tính riêng.
+        Chúng mình lựa chọn những thiết kế thời trang trẻ trung,
+        dễ phối và thoải mái để đồng hành cùng nàng trong từng
+        khoảnh khắc thường ngày.
+    </p>
 </section>
 
+<!-- PRODUCTS -->
 <section id="san-pham">
-<div class="heading">
-<small>KHÁM PHÁ NGAY</small>
-<h2>Những thiết kế dành cho nàng</h2>
-</div>
+    <div class="heading">
+        <small>KHÁM PHÁ NGAY</small>
+        <h2>Những thiết kế dành cho nàng</h2>
+    </div>
 
-<div class="products">
-<div class="product">
-<img src="images/set-ao-babydoll-va-chan-vay-jean.jpg" alt="Set áo babydoll và chân váy jean">
-<div class="product-info"><h3>Set áo babydoll và chân váy jean</h3><p>Trẻ trung · Nữ tính</p></div>
-</div>
+    <div class="products">
 
-<div class="product">
-<img src="images/set-ao-co-yem-cham-bi-va-chan-vay.jpg" alt="Set áo cổ yếm chấm bi">
-<div class="product-info"><h3>Set áo cổ yếm chấm bi</h3><p>Dịu dàng · Nổi bật</p></div>
-</div>
+        <div class="product">
+            <img src="images/set-ao-babydoll-va-chan-vay-jean.jpg"
+            alt="Set áo babydoll và chân váy jean">
+            <div class="product-info">
+                <h3>Set áo babydoll và chân váy jean</h3>
+                <p>Trẻ trung · Nữ tính</p>
+            </div>
+        </div>
 
-<div class="product">
-<img src="images/set-ao-co-yem-va-quan-jean.jpg" alt="Set áo cổ yếm và quần jean">
-<div class="product-info"><h3>Set áo cổ yếm và quần jean</h3><p>Năng động · Cá tính</p></div>
-</div>
+        <div class="product">
+            <img src="images/set-ao-co-yem-cham-bi-va-chan-vay.jpg"
+            alt="Set áo cổ yếm chấm bi">
+            <div class="product-info">
+                <h3>Set áo cổ yếm chấm bi</h3>
+                <p>Dịu dàng · Nổi bật</p>
+            </div>
+        </div>
 
-<div class="product">
-<img src="images/set-ao-dai-tay-va-chan-vay-xoe.jpg" alt="Set áo dài tay và chân váy xòe">
-<div class="product-info"><h3>Set áo dài tay và chân váy xòe</h3><p>Nữ tính · Thanh lịch</p></div>
-</div>
+        <div class="product">
+            <img src="images/set-ao-co-yem-va-quan-jean.jpg"
+            alt="Set áo cổ yếm và quần jean">
+            <div class="product-info">
+                <h3>Set áo cổ yếm và quần jean</h3>
+                <p>Năng động · Cá tính</p>
+            </div>
+        </div>
 
-<div class="product">
-<img src="images/set-ao-sat-nach-trang-va-chan-vay-xanh.jpg" alt="Set áo sát nách trắng">
-<div class="product-info"><h3>Set áo sát nách và chân váy xanh</h3><p>Tươi mới · Trẻ trung</p></div>
-</div>
+        <div class="product">
+            <img src="images/set-ao-dai-tay-va-chan-vay-xoe.jpg"
+            alt="Set áo dài tay và chân váy xòe">
+            <div class="product-info">
+                <h3>Set áo dài tay và chân váy xòe</h3>
+                <p>Nữ tính · Thanh lịch</p>
+            </div>
+        </div>
 
-<div class="product">
-<img src="images/set-ao-tre-vai-va-chan-vay-xoe.jpg" alt="Set áo trễ vai và chân váy xòe">
-<div class="product-info"><h3>Set áo trễ vai và chân váy xòe</h3><p>Ngọt ngào · Dịu dàng</p></div>
-</div>
-</div>
+        <div class="product">
+            <img src="images/set-ao-sat-nach-trang-va-chan-vay-xanh.jpg"
+            alt="Set áo sát nách trắng và chân váy xanh">
+            <div class="product-info">
+                <h3>Set áo sát nách và chân váy xanh</h3>
+                <p>Tươi mới · Trẻ trung</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/set-ao-tre-vai-va-chan-vay-xoe.jpg"
+            alt="Set áo trễ vai và chân váy xòe">
+            <div class="product-info">
+                <h3>Set áo trễ vai và chân váy xòe</h3>
+                <p>Ngọt ngào · Dịu dàng</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
+<!-- ABOUT -->
 <section class="about" id="gioi-thieu">
-<div class="about-inner">
-<img src="images/set-ao-sat-nach-va-chan-vay-lua.jpg" alt="Thời trang Tiny Pea">
-<div>
-<div class="heading" style="text-align:left;margin-bottom:15px">
-<small>CÂU CHUYỆN CỦA CHÚNG MÌNH</small>
-<h2>Về Tiny Pea</h2>
-</div>
-<p>Tiny Pea là thương hiệu thời trang nữ hướng đến phong cách trẻ trung, năng động và dễ ứng dụng. Chúng mình mong muốn giúp nàng tìm thấy những bộ trang phục phù hợp với cá tính và cuộc sống hằng ngày.</p>
-<p>Mỗi lựa chọn đều là một cách để nàng thể hiện bản thân. Hãy mặc điều nàng yêu thích và tự tin với câu chuyện của riêng mình!</p>
-<a href="#san-pham" class="btn">XEM SẢN PHẨM</a>
-</div>
-</div>
+    <div class="about-inner">
+
+        <img src="images/set-ao-sat-nach-va-chan-vay-lua.jpg"
+        alt="Thời trang Tiny Pea">
+
+        <div>
+            <div class="heading" style="text-align:left;margin-bottom:15px">
+                <small>CÂU CHUYỆN CỦA CHÚNG MÌNH</small>
+                <h2>Về Tiny Pea</h2>
+            </div>
+
+            <p>
+                Tiny Pea là thương hiệu thời trang nữ hướng đến
+                phong cách trẻ trung, năng động và dễ ứng dụng.
+                Chúng mình mong muốn giúp nàng tìm thấy những
+                bộ trang phục phù hợp với cá tính và cuộc sống
+                hằng ngày.
+            </p>
+
+            <p>
+                Mỗi lựa chọn đều là một cách để nàng thể hiện
+                bản thân. Hãy mặc điều nàng yêu thích và tự tin
+                với câu chuyện của riêng mình!
+            </p>
+
+            <a href="#san-pham" class="btn">
+                XEM SẢN PHẨM
+            </a>
+        </div>
+
+    </div>
 </section>
 
+<!-- BRAND VALUES -->
 <section>
-<div class="heading">
-<small>ĐIỀU TINY PEA HƯỚNG ĐẾN</small>
-<h2>Phong cách của nàng</h2>
-</div>
-<div class="values">
-<div class="value"><h3>Trẻ trung</h3><p>Thiết kế tươi mới, bắt kịp phong cách hiện đại.</p></div>
-<div class="value"><h3>Dễ ứng dụng</h3><p>Trang phục dễ phối, phù hợp với nhiều dịp thường ngày.</p></div>
-<div class="value"><h3>Tự tin là chính mình</h3><p>Tôn vinh cá tính và vẻ đẹp riêng của mỗi cô gái.</p></div>
-</div>
+    <div class="heading">
+        <small>ĐIỀU TINY PEA HƯỚNG ĐẾN</small>
+        <h2>Phong cách của nàng</h2>
+    </div>
+
+    <div class="values">
+
+        <div class="value">
+            <h3>Trẻ trung</h3>
+            <p>
+                Thiết kế tươi mới, bắt kịp phong cách hiện đại.
+            </p>
+        </div>
+
+        <div class="value">
+            <h3>Dễ ứng dụng</h3>
+            <p>
+                Trang phục dễ phối, phù hợp với nhiều dịp thường ngày.
+            </p>
+        </div>
+
+        <div class="value">
+            <h3>Tự tin là chính mình</h3>
+            <p>
+                Tôn vinh cá tính và vẻ đẹp riêng của mỗi cô gái.
+            </p>
+        </div>
+
+    </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="lien-he">
-<small>KẾT NỐI CÙNG TINY PEA</small>
-<h2>Nàng đã tìm được phong cách của mình chưa?</h2>
-<p>Khám phá những thiết kế xinh xắn và đồng hành cùng Tiny Pea nhé!</p>
-<a href="https://www.facebook.com/" target="_blank" rel="noopener" class="btn">LIÊN HỆ VỚI CHÚNG MÌNH</a>
-</section>
-</main>
+    <small>KẾT NỐI CÙNG TINY PEA</small>
 
-<footer>
-<div class="footer-inner">
-<div><h2 style="color:#f8dce7">Tiny Pea</h2><p>Thời trang của nàng, câu chuyện của nàng.</p></div>
-<div><h3>KHÁM PHÁ</h3><p><a href="#trang-chu">Trang chủ</a><br><a href="#san-pham">Sản phẩm</a><br><a href="#gioi-thieu">Giới thiệu</a></p></div>
-<div><h3>LIÊN HỆ</h3><p>Facebook: Tiny Pea<br>Email: tinypea@example.com</p></div>
-</div>
-<div class="copyright">© 2026 Tiny Pea. Bản quyền thuộc về Tiny Pea.</div>
-</footer>
-<div class="social-links">
-    <p>Theo dõi Tiny Pea tại:</p>
+    <h2>Nàng đã tìm được phong cách của mình chưa?</h2>
+
+    <p>
+        Khám phá những thiết kế xinh xắn và đồng hành
+        cùng Tiny Pea nhé!
+    </p>
 
     <a href="https://www.facebook.com/tinypea.233"
-       target="_blank" rel="noopener noreferrer">
-       Facebook
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+        LIÊN HỆ VỚI TINY PEA
     </a>
+</section>
 
-    <a href="https://www.instagram.com/tinypea.2303/"
-       target="_blank" rel="noopener noreferrer">
-       Instagram
-    </a>
-</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            <h2 style="color:#f8dce7">Tiny Pea</h2>
+            <p>Thời trang của nàng, câu chuyện của nàng.</p>
+            <p>Your Style, Your Story.</p>
+        </div>
+
+        <div>
+            <h3>KHÁM PHÁ</h3>
+            <p>
+                <a href="#trang-chu">Trang chủ</a><br>
+                <a href="#san-pham">Sản phẩm</a><br>
+                <a href="#gioi-thieu">Giới thiệu</a>
+            </p>
+        </div>
+
+        <div>
+            <h3>KẾT NỐI VỚI TINY PEA</h3>
+            <p>
+                <a href="https://www.facebook.com/tinypea.233"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Facebook Tiny Pea
+                </a>
+                <br>
+
+                <a href="https://www.instagram.com/tinypea.2303/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram Tiny Pea
+                </a>
+                <br>
+
+                Email: tinypea@example.com
+            </p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Tiny Pea. Bản quyền thuộc về Tiny Pea.
+    </div>
+
+</footer>
 
 </body>
 </html>
