@@ -2,732 +2,1153 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiny Pea | Your Style, Your Story</title>
-<meta name="description" content="Tiny Pea - Thời trang nữ trẻ trung, năng động và dễ ứng dụng.">
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: #fff8fa;
-    color: #59434d;
-}
-
-header {
-    background: #f8dde8;
-    padding: 14px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.logo img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-nav {
-    display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: #59434d;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-nav a:hover {
-    color: #bd7794;
-}
-
-/* TRANG CHỦ */
-
-.hero {
-    padding: 65px 7%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 35px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 18px;
-}
-
-.hero p {
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.hero img {
-    width: 100%;
-    height: 440px;
-    object-fit: cover;
-    border-radius: 18px;
-}
-
-.btn {
-    display: inline-block;
-    background: #c77f9d;
-    color: white;
-    padding: 13px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: #a75d7d;
-}
-
-.section {
-    padding: 45px 7%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.section-title h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    margin-bottom: 10px;
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 30px;
-}
-
-.filter-btn {
-    border: 1px solid #dbaabd;
-    background: white;
-    color: #59434d;
-    padding: 10px 22px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: #c77f9d;
-    color: white;
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.product {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(100,50,70,0.07);
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.product:hover {
-    transform: translateY(-5px);
-}
-
-.product.hidden {
-    display: none;
-}
-
-.product img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
-}
-
-.product-info {
-    padding: 17px;
-    text-align: center;
-}
-
-.product-info h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.product-info p {
-    color: #bd7794;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.detail-link {
-    display: inline-block;
-    border: 1px solid #dbaabd;
-    border-radius: 20px;
-    padding: 8px 18px;
-    font-size: 14px;
-}
-
-.about {
-    background: #f8e8ee;
-    text-align: center;
-    padding: 55px 12%;
-    line-height: 1.8;
-}
-
-.about h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-/* TRANG CHI TIẾT */
-
-#detail-page {
-    display: none;
-}
-
-.detail-container {
-    max-width: 1100px;
-    margin: 45px auto;
-    padding: 0 25px;
-}
-
-.back-button {
-    display: inline-block;
-    margin-bottom: 30px;
-    color: #a75d7d;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.detail-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.detail-content img {
-    width: 100%;
-    height: 570px;
-    object-fit: cover;
-    border-radius: 18px;
-    background: #f8dde8;
-}
-
-.detail-info h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin: 15px 0;
-}
-
-.collection-label {
-    color: #bd7794;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-.detail-price {
-    color: #bd7794;
-    font-size: 23px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.detail-description {
-    line-height: 1.9;
-    margin-bottom: 22px;
-}
-
-.detail-info h3 {
-    margin: 20px 0 10px;
-}
-
-.detail-info ul {
-    padding-left: 20px;
-    line-height: 2;
-}
-
-.order-btn {
-    display: inline-block;
-    background: #c77f9d;
-    color: white;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 25px;
-    margin-top: 28px;
-    font-weight: bold;
-}
-
-.order-btn:hover {
-    background: #a75d7d;
-}
-
-.note {
-    margin-top: 18px;
-    font-size: 14px;
-    color: #927984;
-    line-height: 1.7;
-}
-
-.not-found {
-    text-align: center;
-    padding: 80px 15px;
-}
-
-footer {
-    background: #59434d;
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
-    line-height: 2;
-}
-
-footer a {
-    color: #f8dde8;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-/* ĐIỆN THOẠI */
-
-@media (max-width: 700px) {
-    header {
-        justify-content: center;
-    }
-
-    nav {
-        justify-content: center;
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 35px 6%;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero img {
-        height: 330px;
-    }
-
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .product img {
-        height: 220px;
-    }
-
-    .product-info {
-        padding: 12px 8px;
-    }
-
-    .product-info h3 {
-        font-size: 14px;
-    }
-
-    .detail-container {
-        margin: 25px auto;
-    }
-
-    .detail-content {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .detail-content img {
-        height: 400px;
-    }
-
-    .detail-info h1 {
-        font-size: 29px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Pea - Your Style, Your Story</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink: #f8dde8;
+            --light-pink: #fff8fa;
+            --blush: #ebc2d2;
+            --dark: #59434d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            background: var(--light-pink);
+        }
+
+        button, a {
+            font-family: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #fff;
+            padding: 12px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(89, 67, 77, 0.07);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 150px;
+        }
+
+        .logo img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c77f9d;
+        }
+
+        .header-button {
+            background: var(--pink);
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            background: var(--blush);
+            transform: translateY(-2px);
+        }
+
+        /* BANNER TRƯỢT NGANG */
+
+        .hero {
+            height: 570px;
+            position: relative;
+            overflow: hidden;
+            background: var(--pink);
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.85s ease-in-out;
+        }
+
+        .slide {
+            position: relative;
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center 35%;
+        }
+
+        .slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(35, 20, 28, 0.48),
+                rgba(35, 20, 28, 0.05)
+            );
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 9%;
+            transform: translateY(-50%);
+            max-width: 470px;
+            color: white;
+            pointer-events: none;
+        }
+
+        .hero-content .small-title {
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: white;
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            pointer-events: auto;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--pink);
+            transform: translateY(-3px);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 43px;
+            height: 43px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--dark);
+            font-size: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .slider-arrow:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .slider-arrow.prev {
+            left: 22px;
+        }
+
+        .slider-arrow.next {
+            right: 22px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            z-index: 5;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-width: 90%;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            width: 25px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        /* GIỚI THIỆU */
+
+        .intro {
+            padding: 75px 8%;
+            text-align: center;
+            background: var(--light-pink);
+        }
+
+        .section-label {
+            color: #bd8198;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(29px, 4vw, 40px);
+            margin-bottom: 18px;
+        }
+
+        .intro p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #79636d;
+        }
+
+        /* DANH SÁCH SẢN PHẨM */
+
+        .products-section {
+            padding: 65px 7%;
+            background: white;
+            text-align: center;
+        }
+
+        .products-section .section-title {
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: #8b747f;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 38px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--blush);
+            background: white;
+            color: var(--dark);
+            border-radius: 25px;
+            padding: 10px 23px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--pink);
+            border-color: var(--pink);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            text-align: left;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #f4e8ed;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(89, 67, 77, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+            background: var(--light-pink);
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-category {
+            color: #bd8198;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 13px;
+            color: #947b86;
+            margin-bottom: 15px;
+        }
+
+        .detail-link {
+            display: inline-block;
+            background: var(--pink);
+            padding: 10px 17px;
+            border-radius: 22px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* LÝ DO CHỌN TINY PEA */
+
+        .features {
+            padding: 70px 7%;
+            background: var(--pink);
+            text-align: center;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.75);
+            padding: 30px 22px;
+            border-radius: 15px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: #806a75;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* LIÊN HỆ */
+
+        .contact {
+            padding: 70px 7%;
+            text-align: center;
+            background: var(--light-pink);
+        }
+
+        .contact p {
+            color: #806a75;
+            margin: 12px auto 25px;
+            line-height: 1.8;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #8c6477;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 12px;
+            line-height: 1.9;
+            color: #eadde3;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 13px;
+            text-decoration: underline;
+        }
+
+        /* TRANG CHI TIẾT SẢN PHẨM */
+
+        .detail-page {
+            display: none;
+            min-height: 70vh;
+            padding: 55px 8%;
+            background: var(--light-pink);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #a66f87;
+        }
+
+        .detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .detail-image {
+            width: 100%;
+            max-height: 650px;
+            object-fit: cover;
+            border-radius: 15px;
+            background: var(--pink);
+        }
+
+        .detail-info .product-category {
+            margin-bottom: 15px;
+        }
+
+        .detail-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 18px;
+        }
+
+        .detail-info .detail-price {
+            color: #a66f87;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .detail-info p {
+            color: #806a75;
+            line-height: 1.9;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .detail-info h3 {
+            font-size: 14px;
+            margin: 20px 0 10px;
+        }
+
+        .order-button {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #8c6477;
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            header {
+                padding: 12px 4%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                height: 480px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .logo {
+                justify-content: center;
+                width: 100%;
+            }
+
+            nav {
+                gap: 18px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .header-button {
+                display: none;
+            }
+
+            .hero {
+                height: 430px;
+            }
+
+            .hero-content {
+                left: 8%;
+                right: 8%;
+                max-width: 85%;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+            }
+
+            .slider-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+
+            .slider-arrow.prev {
+                left: 8px;
+            }
+
+            .slider-arrow.next {
+                right: 8px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-name {
+                font-size: 13px;
+            }
+
+            .product-price {
+                font-size: 11px;
+            }
+
+            .detail-link {
+                font-size: 11px;
+                padding: 9px 12px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .detail-page {
+                padding: 35px 6%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="images/logo-tinypea.jpg" alt="Tiny Pea Logo">
-        Tiny Pea
-    </div>
-
-    <nav>
-        <a href="#home" onclick="showHome()">Trang chủ</a>
-        <a href="#products" onclick="showHome()">Sản phẩm</a>
-        <a href="#about" onclick="showHome()">Về Tiny Pea</a>
-        <a href="#contact" onclick="showHome()">Liên hệ</a>
-    </nav>
-</header>
-
-<!-- TRANG CHỦ -->
-
-<main id="home-page">
-
-    <section class="hero" id="home">
-        <div>
-            <h1>Your Style,<br>Your Story.</h1>
-
-            <p>
-                Tiny Pea mang đến những thiết kế thời trang nữ trẻ trung,
-                năng động và dễ ứng dụng. Mỗi bộ trang phục là một cách
-                để bạn thể hiện phong cách riêng của mình.
-            </p>
-
-            <a href="#products" class="btn">Khám phá ngay</a>
-        </div>
-
-        <img src="images/set-ao-babydoll-va-chan-vay-jean.jpg"
-             alt="Bộ sưu tập Tiny Pea">
-    </section>
-
-    <section class="section" id="products">
-
-        <div class="section-title">
-            <h2>Our Collection</h2>
-            <p>Khám phá những thiết kế dành riêng cho bạn</p>
-        </div>
-
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Tất cả</button>
-            <button class="filter-btn" data-filter="ao">Áo</button>
-            <button class="filter-btn" data-filter="chan-vay">Chân váy</button>
-            <button class="filter-btn" data-filter="set">Set đồ</button>
-        </div>
-
-        <div class="products">
-
-            <div class="product" data-category="ao chan-vay set" onclick="showProduct('sp1')">
-                <img src="images/set-ao-babydoll-va-chan-vay-jean.jpg" alt="Set áo Babydoll">
-                <div class="product-info">
-                    <h3>Set áo Babydoll và chân váy Jean</h3>
-                    <p>Liên hệ để biết giá</p>
-                    <span class="detail-link">Xem chi tiết</span>
-                </div>
-            </div>
-
-            <div class="product" data-category="ao chan-vay set" onclick="showProduct('sp2')">
-                <img src="images/set-ao-co-yem-cham-bi-va-chan-vay.jpg" alt="Set áo cổ yếm chấm bi">
-                <div class="product-info">
-                    <h3>Set áo cổ yếm chấm bi</h3>
-                    <p>Liên hệ để biết giá</p>
-                    <span class="detail-link">Xem chi tiết</span>
-                </div>
-            </div>
-
-            <div class="product" data-category="ao set" onclick="showProduct('sp3')">
-                <img src="images/set-ao-co-yem-va-quan-jean.jpg" alt="Set áo cổ yếm và quần Jean">
-                <div class="product-info">
-                    <h3>Set áo cổ yếm và quần Jean</h3>
-                    <p>Liên hệ để biết giá</p>
-                    <span class="detail-link">Xem chi tiết</span>
-                </div>
-            </div>
-
-            <div class="product" data-category="ao chan-vay set" onclick="showProduct('sp4')">
-                <img src="images/set-ao-dai-tay-va-chan-vay-xoe.jpg" alt="Set áo dài tay">
-                <div class="product-info">
-                    <h3>Set áo dài tay và chân váy xòe</h3>
-                    <p>Liên hệ để biết giá</p>
-                    <span class="detail-link">Xem chi tiết</span>
-                </div>
-            </div>
-
-            <div class="product" data-category="ao chan-vay set" onclick="showProduct('sp5')">
-                <img src="images/set-ao-sat-nach-trang-va-chan-vay-xanh.jpg" alt="Set áo sát nách">
-                <div class="product-info">
-                    <h3>Set áo sát nách trắng và chân váy xanh</h3>
-                    <p>Liên hệ để biết giá</p>
-                    <span class="detail-link">Xem chi tiết</span>
-                </div>
-            </div>
-
-            <div class="product" data-category="ao chan-vay set" onclick="showProduct('sp6')">
-                <img src="images/set-ao-tre-vai-va-chan-vay-xoe.jpg" alt="Set áo trễ vai">
-                <div class="product-info">
-                    <h3>Set áo trễ vai và chân váy xòe</h3>
-                    <p>Liên hệ để biết giá</p>
-                    <span class="detail-link">Xem chi tiết</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <h2>About Tiny Pea</h2>
-        <p>
-            Tiny Pea tin rằng thời trang không chỉ là quần áo,
-            mà còn là cách mỗi cô gái thể hiện cá tính và câu chuyện
-            của riêng mình. Chúng mình hướng đến phong cách trẻ trung,
-            năng động và dễ ứng dụng trong cuộc sống hằng ngày.
-        </p>
-    </section>
-
-</main>
-
-<!-- TRANG CHI TIẾT SẢN PHẨM -->
-
-<main id="detail-page">
-    <div class="detail-container">
-
-        <a class="back-button" href="#products" onclick="showHome()">
-            ← Quay lại bộ sưu tập
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo" onclick="goHome(event)">
+            <img src="images/logo-tinypea.jpg" alt="Tiny Pea Logo">
+            <span class="logo-name">Tiny Pea</span>
         </a>
 
-        <section class="detail-content" id="detail-content">
+        <nav>
+            <a href="#home" onclick="goHome(event)">Trang chủ</a>
+            <a href="#products" onclick="goHome(event)">Sản phẩm</a>
+            <a href="#about" onclick="goHome(event)">Giới thiệu</a>
+            <a href="#contact" onclick="goHome(event)">Liên hệ</a>
+        </nav>
 
-            <img id="detail-image" src="" alt="Ảnh sản phẩm">
+        <a class="header-button" href="https://www.facebook.com/tinypea.233" target="_blank">
+            Mua sắm ngay
+        </a>
+    </header>
 
-            <div class="detail-info">
+    <!-- TRANG CHỦ -->
+    <main id="home-page">
 
-                <p class="collection-label">TINY PEA COLLECTION</p>
+        <!-- BANNER -->
+        <section class="hero" id="home">
+            <div class="slides" id="slides"></div>
 
-                <h1 id="detail-name">Tên sản phẩm</h1>
-
-                <p class="detail-price" id="detail-price">
-                    Liên hệ để biết giá
+            <div class="hero-content">
+                <div class="small-title">WELCOME TO TINY PEA</div>
+                <h1>Your Style,<br>Your Story.</h1>
+                <p>
+                    Mỗi bộ trang phục là một cách để bạn thể hiện cá tính.
+                    Cùng Tiny Pea tạo nên phong cách riêng mỗi ngày.
                 </p>
+                <a href="#products" class="hero-button">Khám phá ngay</a>
+            </div>
 
-                <p class="detail-description" id="detail-description"></p>
+            <button class="slider-arrow prev" onclick="changeSlide(-1)" aria-label="Ảnh trước">‹</button>
+            <button class="slider-arrow next" onclick="changeSlide(1)" aria-label="Ảnh tiếp theo">›</button>
 
-                <h3>Thông tin sản phẩm</h3>
+            <div class="slider-dots" id="slider-dots"></div>
+        </section>
 
-                <ul>
-                    <li>Phong cách trẻ trung, nữ tính.</li>
-                    <li>Dễ phối đồ và ứng dụng hằng ngày.</li>
-                    <li>Phù hợp với nhiều dịp khác nhau.</li>
-                </ul>
+        <!-- GIỚI THIỆU -->
+        <section class="intro" id="about">
+            <div class="section-label">ABOUT TINY PEA</div>
+            <h2 class="section-title">Thời trang dành cho chính bạn</h2>
+            <p>
+                Tiny Pea mang đến những thiết kế thời trang nữ trẻ trung,
+                năng động và dễ ứng dụng. Chúng mình tin rằng bạn không cần
+                chạy theo mọi xu hướng, chỉ cần lựa chọn trang phục khiến
+                bạn cảm thấy tự tin và thoải mái nhất.
+            </p>
+        </section>
 
-                <a class="order-btn"
-                   href="https://www.facebook.com/tinypea.233"
-                   target="_blank">
-                    Liên hệ đặt hàng
-                </a>
+        <!-- SẢN PHẨM -->
+        <section class="products-section" id="products">
+            <div class="section-label">OUR COLLECTION</div>
+            <h2 class="section-title">Khám phá bộ sưu tập</h2>
+            <p class="section-description">
+                Những thiết kế xinh xắn dành riêng cho phong cách của bạn.
+            </p>
 
-                <p class="note">
-                    Bạn có thể liên hệ Tiny Pea để được tư vấn thêm
-                    về giá, kích cỡ và tình trạng sản phẩm nhé!
-                </p>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterProducts('all', this)">Tất cả</button>
+                <button class="filter-btn" onclick="filterProducts('ao', this)">Áo</button>
+                <button class="filter-btn" onclick="filterProducts('chan-vay', this)">Chân váy</button>
+                <button class="filter-btn" onclick="filterProducts('set-do', this)">Set đồ</button>
+            </div>
 
+            <div class="product-grid" id="product-grid"></div>
+        </section>
+
+        <!-- LÝ DO CHỌN TINY PEA -->
+        <section class="features">
+            <div class="section-label">WHY TINY PEA</div>
+            <h2 class="section-title">Điều làm nên Tiny Pea</h2>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">♡</div>
+                    <h3>Phong cách trẻ trung</h3>
+                    <p>Thiết kế năng động, xinh xắn và phù hợp với nhiều phong cách khác nhau.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✿</div>
+                    <h3>Dễ dàng ứng dụng</h3>
+                    <p>Trang phục dễ phối, phù hợp cho đi học, đi chơi và những buổi gặp gỡ.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">♥</div>
+                    <h3>Thể hiện cá tính</h3>
+                    <p>Giúp bạn tự tin lựa chọn và tạo nên câu chuyện phong cách của riêng mình.</p>
+                </div>
             </div>
         </section>
 
-        <section class="not-found" id="not-found" style="display:none;">
-            <h2>Không tìm thấy sản phẩm!</h2>
-            <p style="margin:15px 0;">Sản phẩm có thể không tồn tại.</p>
-            <button class="btn" onclick="showHome()">Quay lại cửa hàng</button>
+        <!-- LIÊN HỆ -->
+        <section class="contact" id="contact">
+            <div class="section-label">LET'S CONNECT</div>
+            <h2 class="section-title">Cùng Tiny Pea chọn outfit nhé!</h2>
+            <p>
+                Bạn đã tìm thấy sản phẩm yêu thích?<br>
+                Nhắn tin cho Tiny Pea để được tư vấn và đặt hàng.
+            </p>
+
+            <a class="contact-button" href="https://www.facebook.com/tinypea.233" target="_blank">
+                Facebook
+            </a>
+
+            <a class="contact-button" href="https://www.instagram.com/tinypea.2303/" target="_blank">
+                Instagram
+            </a>
         </section>
 
-    </div>
-</main>
+    </main>
 
-<footer id="contact">
-    <h2>Tiny Pea</h2>
-    <p>Your Style, Your Story.</p>
-    <p>Thời trang nữ trẻ trung – Năng động – Dễ ứng dụng</p>
-    <p>
-        <a href="https://www.facebook.com/tinypea.233" target="_blank">Facebook Tiny Pea</a>
-        <a href="https://www.instagram.com/tinypea.2303/" target="_blank">Instagram Tiny Pea</a>
-    </p>
-    <p>© 2026 Tiny Pea. All rights reserved.</p>
-</footer>
+    <!-- TRANG CHI TIẾT SẢN PHẨM -->
+    <section class="detail-page" id="detail-page">
+        <a href="index.html" class="back-link" onclick="goHome(event)">← Quay lại cửa hàng</a>
+        <div id="detail-content"></div>
+    </section>
 
-<script>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Tiny Pea</div>
+        <p>Your Style, Your Story.</p>
 
-/* DỮ LIỆU SẢN PHẨM */
+        <div class="social-links">
+            <a href="https://www.facebook.com/tinypea.233" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/tinypea.2303/" target="_blank">Instagram</a>
+        </div>
 
-const productList = {
-    sp1: {
-        name: "Set áo Babydoll và chân váy Jean",
-        image: "images/set-ao-babydoll-va-chan-vay-jean.jpg",
-        price: "Liên hệ để biết giá",
-        description: "Set đồ kết hợp áo Babydoll trẻ trung cùng chân váy Jean năng động. Thiết kế mang đến vẻ ngoài nữ tính nhưng vẫn cá tính, phù hợp cho những buổi đi chơi và dạo phố."
-    },
+        <p>© 2026 Tiny Pea. All rights reserved.</p>
+    </footer>
 
-    sp2: {
-        name: "Set áo cổ yếm chấm bi",
-        image: "images/set-ao-co-yem-cham-bi-va-chan-vay.jpg",
-        price: "Liên hệ để biết giá",
-        description: "Thiết kế cổ yếm kết hợp họa tiết chấm bi tạo điểm nhấn đáng yêu và nữ tính. Đây là lựa chọn phù hợp cho những cô nàng yêu thích phong cách trẻ trung."
-    },
+    <script>
+        /* =====================================
+           1. DỮ LIỆU 12 ẢNH BANNER
+        ===================================== */
 
-    sp3: {
-        name: "Set áo cổ yếm và quần Jean",
-        image: "images/set-ao-co-yem-va-quan-jean.jpg",
-        price: "Liên hệ để biết giá",
-        description: "Sự kết hợp giữa áo cổ yếm và quần Jean tạo nên phong cách năng động, hiện đại. Dễ dàng ứng dụng khi đi chơi, gặp gỡ bạn bè hoặc dạo phố."
-    },
+        const bannerImages = [
+            "images/ao-thun-dai-tay-hai-lop.jpg",
+            "images/set-ao-babydoll-va-chan-vay-jean.jpg",
+            "images/set-ao-co-yem-cham-bi-va-chan-vay.jpg",
+            "images/set-ao-co-yem-va-quan-jean.jpg",
+            "images/set-ao-dai-tay-va-chan-vay-xoe.jpg",
+            "images/set-ao-sat-nach-trang-va-chan-vay-xanh.jpg",
+            "images/set-ao-sat-nach-va-chan-vay-lua.jpg",
+            "images/set-ao-sat-nach-xanh-chiet-eo-va-chan-vay-dai-hoa-tiet-hoa-xanh.jpg",
+            "images/set-ao-tay-bong-cham-bi-den-va-quan-jean-ong-loe.jpg",
+            "images/set-ao-thun-soc-va-quan-dui.jpg",
+            "images/set-ao-tre-vai-va-chan-vay-xoe.jpg",
+            "images/set-ao-tre-vai-va-quan-jean-ong-loe-den.jpg"
+        ];
 
-    sp4: {
-        name: "Set áo dài tay và chân váy xòe",
-        image: "images/set-ao-dai-tay-va-chan-vay-xoe.jpg",
-        price: "Liên hệ để biết giá",
-        description: "Set đồ mang phong cách nhẹ nhàng với áo dài tay kết hợp chân váy xòe. Thiết kế tạo cảm giác nữ tính, thanh lịch và dễ phối phụ kiện."
-    },
+        const slidesContainer = document.getElementById("slides");
+        const dotsContainer = document.getElementById("slider-dots");
 
-    sp5: {
-        name: "Set áo sát nách trắng và chân váy xanh",
-        image: "images/set-ao-sat-nach-trang-va-chan-vay-xanh.jpg",
-        price: "Liên hệ để biết giá",
-        description: "Sự kết hợp giữa áo sát nách trắng và chân váy xanh tạo nên tổng thể tươi sáng, trẻ trung. Phù hợp với những ngày dạo phố hoặc đi chơi."
-    },
+        let currentSlide = 0;
+        let slideDirection = 1;
+        let slideTimer;
 
-    sp6: {
-        name: "Set áo trễ vai và chân váy xòe",
-        image: "images/set-ao-tre-vai-va-chan-vay-xoe.jpg",
-        price: "Liên hệ để biết giá",
-        description: "Thiết kế áo trễ vai kết hợp chân váy xòe mang đến vẻ ngoài nữ tính, nhẹ nhàng và nổi bật. Phù hợp cho những cô nàng yêu thích phong cách điệu đà."
-    }
-};
+        bannerImages.forEach((image, index) => {
+            const slide = document.createElement("div");
+            slide.className = "slide";
 
-/* MỞ TRANG CHI TIẾT */
+            const img = document.createElement("img");
+            img.src = image;
+            img.alt = "Bộ sưu tập thời trang Tiny Pea";
+            img.loading = index === 0 ? "eager" : "lazy";
 
-function showProduct(id) {
-    const product = productList[id];
+            slide.appendChild(img);
+            slidesContainer.appendChild(slide);
 
-    if (!product) return;
+            const dot = document.createElement("button");
+            dot.className = index === 0 ? "dot active" : "dot";
+            dot.setAttribute("aria-label", "Chuyển đến ảnh " + (index + 1));
+            dot.addEventListener("click", () => {
+                goToSlide(index);
+            });
 
-    document.getElementById("home-page").style.display = "none";
-    document.getElementById("detail-page").style.display = "block";
-
-    document.getElementById("detail-image").src = product.image;
-    document.getElementById("detail-image").alt = product.name;
-    document.getElementById("detail-name").textContent = product.name;
-    document.getElementById("detail-price").textContent = product.price;
-    document.getElementById("detail-description").textContent = product.description;
-
-    document.getElementById("detail-content").style.display = "grid";
-    document.getElementById("not-found").style.display = "none";
-
-    history.pushState({ page: "detail", id: id }, "", "?id=" + id);
-    window.scrollTo(0, 0);
-}
-
-/* QUAY LẠI TRANG CHỦ */
-
-function showHome() {
-    document.getElementById("home-page").style.display = "block";
-    document.getElementById("detail-page").style.display = "none";
-
-    history.pushState({ page: "home" }, "", window.location.pathname);
-    window.scrollTo(0, 0);
-}
-
-/* BỘ LỌC SẢN PHẨM */
-
-const filterButtons = document.querySelectorAll(".filter-btn");
-const products = document.querySelectorAll(".product");
-
-filterButtons.forEach(button => {
-    button.addEventListener("click", function() {
-        const selectedCategory = this.dataset.filter;
-
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
-
-        products.forEach(product => {
-            const categories = product.dataset.category.split(" ");
-
-            if (selectedCategory === "all" ||
-                categories.includes(selectedCategory)) {
-                product.classList.remove("hidden");
-            } else {
-                product.classList.add("hidden");
-            }
+            dotsContainer.appendChild(dot);
         });
-    });
-});
 
-/* HỖ TRỢ NÚT BACK CỦA TRÌNH DUYỆT */
+        const dots = document.querySelectorAll(".dot");
 
-function renderFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+        function updateSlider() {
+            slidesContainer.style.transform =
+                `translateX(-${currentSlide * 100}%)`;
 
-    if (id && productList[id]) {
-        const product = productList[id];
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentSlide);
+            });
+        }
 
-        document.getElementById("home-page").style.display = "none";
-        document.getElementById("detail-page").style.display = "block";
+        function goToSlide(index) {
+            currentSlide = (index + bannerImages.length) % bannerImages.length;
+            slideDirection = index >= currentSlide ? 1 : -1;
+            updateSlider();
+            restartTimer();
+        }
 
-        document.getElementById("detail-image").src = product.image;
-        document.getElementById("detail-image").alt = product.name;
-        document.getElementById("detail-name").textContent = product.name;
-        document.getElementById("detail-price").textContent = product.price;
-        document.getElementById("detail-description").textContent = product.description;
+        function changeSlide(direction) {
+            currentSlide =
+                (currentSlide + direction + bannerImages.length) % bannerImages.length;
 
-        document.getElementById("detail-content").style.display = "grid";
-        document.getElementById("not-found").style.display = "none";
-    } else if (id) {
-        document.getElementById("home-page").style.display = "none";
-        document.getElementById("detail-page").style.display = "block";
-        document.getElementById("detail-content").style.display = "none";
-        document.getElementById("not-found").style.display = "block";
-    } else {
-        document.getElementById("home-page").style.display = "block";
-        document.getElementById("detail-page").style.display = "none";
-    }
-}
+            slideDirection = direction;
+            updateSlider();
+            restartTimer();
+        }
 
-window.addEventListener("popstate", renderFromUrl);
+        /* Tự động chạy đến cuối rồi quay ngược lại */
 
-renderFromUrl();
+        function autoSlide() {
+            let nextSlide = currentSlide + slideDirection;
 
-</script>
+            if (nextSlide >= bannerImages.length) {
+                slideDirection = -1;
+                nextSlide = currentSlide - 1;
+            }
+
+            if (nextSlide < 0) {
+                slideDirection = 1;
+                nextSlide = currentSlide + 1;
+            }
+
+            currentSlide = nextSlide;
+            updateSlider();
+        }
+
+        function startTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(autoSlide, 3500);
+        }
+
+        function restartTimer() {
+            startTimer();
+        }
+
+        startTimer();
+
+        /* =====================================
+           2. DỮ LIỆU SẢN PHẨM
+        ===================================== */
+
+        const products = [
+            {
+                id: "sp1",
+                name: "Set áo Babydoll và chân váy jean",
+                category: "set-do",
+                categoryName: "Set đồ",
+                image: "images/set-ao-babydoll-va-chan-vay-jean.jpg",
+                description: "Set đồ trẻ trung với áo Babydoll nữ tính kết hợp chân váy jean năng động. Phù hợp cho những buổi đi chơi, dạo phố hoặc gặp gỡ bạn bè.",
+                material: "Thông tin chất liệu vui lòng liên hệ Tiny Pea.",
+                price: "Inbox để nhận giá"
+            },
+            {
+                id: "sp2",
+                name: "Set áo cổ yếm chấm bi và chân váy",
+                category: "set-do",
+                categoryName: "Set đồ",
+                image: "images/set-ao-co-yem-cham-bi-va-chan-vay.jpg",
+                description: "Thiết kế cổ yếm chấm bi tạo điểm nhấn đáng yêu, kết hợp chân váy giúp tổng thể trang phục thêm nữ tính và nổi bật.",
+                material: "Thông tin chất liệu vui lòng liên hệ Tiny Pea.",
+                price: "Inbox để nhận giá"
+            },
+            {
+                id: "sp3",
+                name: "Set áo cổ yếm và quần jean",
+                category: "set-do",
+                categoryName: "Set đồ",
+                image: "images/set-ao-co-yem-va-quan-jean.jpg",
+                description: "Sự kết hợp giữa áo cổ yếm và quần jean mang đến vẻ ngoài hiện đại, năng động và dễ ứng dụng trong nhiều hoàn cảnh.",
+                material: "Thông tin chất liệu vui lòng liên hệ Tiny Pea.",
+                price: "Inbox để nhận giá"
+            },
+            {
+                id: "sp4",
+                name: "Set áo dài tay và chân váy xòe",
+                category: "set-do",
+                categoryName: "Set đồ",
+                image: "images/set-ao-dai-tay-va-chan-vay-xoe.jpg",
+                description: "Set đồ mang phong cách nhẹ nhàng, nữ tính với áo dài tay kết hợp chân váy xòe. Một lựa chọn phù hợp cho những ngày muốn diện phong cách dịu dàng.",
+                material: "Thông tin chất liệu vui lòng liên hệ Tiny Pea.",
+                price: "Inbox để nhận giá"
+            },
+            {
+                id: "sp5",
+                name: "Set áo sát nách trắng và chân váy xanh",
+                category: "set-do",
+                categoryName: "Set đồ",
+                image: "images/set-ao-sat-nach-trang-va-chan-vay-xanh.jpg",
+                description: "Sự kết hợp màu sắc tươi sáng tạo cảm giác trẻ trung, thoải mái. Phù hợp cho những buổi dạo phố và hoạt động thường ngày.",
+                material: "Thông tin chất liệu vui lòng liên hệ Tiny Pea.",
+                price: "Inbox để nhận giá"
+            },
+            {
+                id: "sp6",
+                name: "Set áo trễ vai và chân váy xòe",
+                category: "set-do",
+                categoryName: "Set đồ",
+                image: "images/set-ao-tre-vai-va-chan-vay-xoe.jpg",
+                description: "Áo trễ vai tạo nét nữ tính kết hợp chân váy xòe giúp trang phục thêm duyên dáng. Dành cho những cô nàng yêu thích phong cách nhẹ nhàng.",
+                material: "Thông tin chất liệu vui lòng liên hệ Tiny Pea.",
+                price: "Inbox để nhận giá"
+            }
+        ];
+
+        /* =====================================
+           3. HIỂN THỊ SẢN PHẨM
+        ===================================== */
+
+        const productGrid = document.getElementById("product-grid");
+
+        function displayProducts(category = "all") {
+            productGrid.innerHTML = "";
+
+            const filteredProducts = category === "all"
+                ? products
+                : products.filter(product => product.category === category);
+
+            filteredProducts.forEach(product => {
+                const card = document.createElement("article");
+                card.className = "product-card";
+
+                card.innerHTML = `
+                    <img
+                        class="product-image"
+                        src="${product.image}"
+                        alt="${product.name}"
+                        loading="lazy"
+                    >
+
+                    <div class="product-info">
+                        <div class="product-category">${product.categoryName}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">${product.price}</div>
+                        <a class="detail-link" href="?id=${product.id}">
+                            Xem chi tiết →
+                        </a>
+                    </div>
+                `;
+
+                card.addEventListener("click", function(event) {
+                    if (event.target.closest("a")) return;
+                    window.location.href = "?id=" + product.id;
+                });
+
+                productGrid.appendChild(card);
+            });
+        }
+
+        function filterProducts(category, button) {
+            displayProducts(category);
+
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        }
+
+        displayProducts();
+
+        /* =====================================
+           4. TRANG CHI TIẾT SẢN PHẨM
+        ===================================== */
+
+        function showProductDetail(productId) {
+            const product = products.find(item => item.id === productId);
+
+            document.getElementById("home-page").style.display = "none";
+
+            const detailPage = document.getElementById("detail-page");
+            detailPage.style.display = "block";
+
+            if (!product) {
+                document.getElementById("detail-content").innerHTML = `
+                    <div class="not-found">
+                        <h2>Không tìm thấy sản phẩm</h2>
+                        <p>Sản phẩm có thể đã được cập nhật hoặc không tồn tại.</p>
+                        <a class="order-button" href="index.html" onclick="goHome(event)">
+                            Quay lại trang chủ
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            document.title = product.name + " | Tiny Pea";
+
+            document.getElementById("detail-content").innerHTML = `
+                <div class="detail-container">
+                    <div>
+                        <img
+                            class="detail-image"
+                            src="${product.image}"
+                            alt="${product.name}"
+                        >
+                    </div>
+
+                    <div class="detail-info">
+                        <div class="product-category">${product.categoryName}</div>
+
+                        <h1>${product.name}</h1>
+
+                        <div class="detail-price">${product.price}</div>
+
+                        <p>${product.description}</p>
+
+                        <h3>Thông tin sản phẩm</h3>
+                        <p>${product.material}</p>
+
+                        <h3>Hướng dẫn đặt hàng</h3>
+                        <p>
+                            Nhấn nút bên dưới để nhắn tin cho Tiny Pea.
+                            Chúng mình sẽ tư vấn thêm về giá, kích thước
+                            và tình trạng sản phẩm.
+                        </p>
+
+                        <a
+                            class="order-button"
+                            href="https://www.facebook.com/tinypea.233"
+                            target="_blank"
+                        >
+                            Nhắn tin đặt hàng →
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        /* =====================================
+           5. QUAY LẠI TRANG CHỦ
+        ===================================== */
+
+        function goHome(event) {
+            if (event) event.preventDefault();
+
+            window.location.href = "index.html";
+        }
+
+        /* =====================================
+           6. KIỂM TRA ĐƯỜNG DẪN SẢN PHẨM
+        ===================================== */
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+
+        if (productId) {
+            showProductDetail(productId);
+        } else {
+            document.getElementById("home-page").style.display = "block";
+            document.getElementById("detail-page").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
